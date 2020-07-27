@@ -15,7 +15,7 @@ Supported Championship :
 
 ## A Video is better than an explanation
 
-[![](http://img.youtube.com/vi/uAc4MousaO4/0.jpg)](https://youtu.be/Bt0FqrHWzi0 "SoccerBet")
+[![](http://img.youtube.com/vi/Bt0FqrHWzi0/0.jpg)](https://youtu.be/Bt0FqrHWzi0 "SoccerBet")
 
 ## Test It
 
