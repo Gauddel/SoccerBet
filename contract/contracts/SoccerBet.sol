@@ -6,7 +6,6 @@ import "@chainlink/contracts/src/v0.4/ChainlinkClient.sol";
 import "@chainlink/contracts/src/v0.4/vendor/Ownable.sol";
 import "@chainlink/contracts/src/v0.4/vendor/SafeMath.sol";
 
-// 0x066DaF35220e5142A87971f7E60aE8564174bF30
 
 contract SoccerBet is ChainlinkClient, Ownable {
 
