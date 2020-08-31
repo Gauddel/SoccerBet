@@ -4,6 +4,7 @@ import Teams from './Teams';
 import Competition from './Competition';
 import Matches from './Matches';
 import CreateBet from './CreateBet';
+import goBack from './../images/goBack.png';
 
 const listOfCompetition = [
     { code:'FL1', url:"https://upload.wikimedia.org/wikipedia/fr/thumb/1/14/Ligue_1_Conforama.svg/langfr-800px-Ligue_1_Conforama.svg.png"}, // Ligue 1
@@ -95,8 +96,12 @@ class Competitions extends React.Component {
             return (<Competition key={compet.id} id={compet.id} name={compet.name} url={compet.emblemUrl} loadCompetition={this.loadCompetition} isGreen={isGreen}></Competition>);
         }
 
-        return (<div className='container'>
-        <h1 className="is-text-violet">Choose the wanted Competition</h1>{this.state.listOfSupportedComp.map(cards)}
+        return (<div>
+        <h1 className="text-3xl font-extrabold my-16 flex items-center justify-center">Choose the wanted Competition</h1>
+            <div className="flex justify-around">
+                {this.state.listOfSupportedComp.map(cards)}
+
+            </div>
         </div>);
     }
 
@@ -106,8 +111,14 @@ class Competitions extends React.Component {
         }
         return (
         <div>
-            <button class="button is-violet mt-1 mb-2" onClick={() => this.goToCompetitionVue()}>Go Back</button>
-            <h1 className="is-text-violet">Choose the wanted Team</h1>
+            <div className="m-3">
+                <a target="_blank" className="cursor-pointer" rel="noopener noreferrer" onClick={() => this.goToCompetitionVue()}>
+                                <img className="w-8" src={goBack}/>  
+                        </a>
+            </div>
+
+
+            <h1 className="text-3xl font-extrabold my-16 flex items-center justify-center">Choose the wanted Team</h1>
             <Teams competitionId={this.state.result} getMatches={this.loadTeam}/>
         </div>
         );
@@ -118,9 +129,14 @@ class Competitions extends React.Component {
             return (<div></div>);
         }
         return (<div>
-            <button class="button is-violet mt-1 mb-2" onClick={() => this.goToTeamsVue()}>Go Back</button>
+            <div className="m-3">
+                <a target="_blank" className="cursor-pointer"  onClick={() => this.goToTeamsVue()}>
+                                <img className="w-8" src={goBack}/>  
+                        </a>
+            </div>
             <br/>
-            <Matches teamId={this.state.team} loadCreateBetComponent={this.loadCreateBetComponent}/>
+            <Matches teamId={this.state.team} loadCr
+            eateBetComponent={this.loadCreateBetComponent}/>
         </div>);
     }
 

@@ -33,8 +33,7 @@ class Matches extends React.Component {
         return this.state.matches.map(matche => {
             isdark = !isdark;
             var date = new Date(matche.utcDate);
-            // console.log(date);
-            // console.log(Date.now);
+
             if(date < Date.now()) {
                 return;
             }

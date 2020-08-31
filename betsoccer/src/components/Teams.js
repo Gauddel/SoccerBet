@@ -56,7 +56,7 @@ class Teams extends React.Component {
 
     render() {
         // this.getTeams();
-        return (<div>
+        return (<div className="flex content-start flex-wrap mb-10">
             {this.teamsVue()}
         </div>);
     }

@@ -78,18 +78,18 @@ class Bet extends React.Component {
 
         if (this.state.state === "3") {
             return (
-                <div className=" parentTitle">
-                    <div className="center leftTitle">
+                <div className="flex justify-around">
+                    <div className="text-xs">
                         <p className="is-size-7">
                             Unlock Time : {dateStr}
                         </p>
                     </div>
-                    <div className={`center centerTitle `}>
+                    <div className="text-xs font-semibold">
                         <h4 className={`title is-4 ${this.win()}`}>
                             {this.gain()} Eth
                         </h4>
                     </div>
-                    <div className="center rightTitle">
+                    <div className="text-xs font-extrabold">
                         <p className="is-size-7">
                             {this.state.adversary}
                         </p>
@@ -98,18 +98,18 @@ class Bet extends React.Component {
             );
         }
         return (
-            <div className="container parentTitle">
-                <div className="center leftTitle">
+            <div className="flex justify-around">
+                <div className="text-xs">
                     <p className="is-size-7">
                         Unlock Time : {dateStr}
                     </p>
                 </div>
-                <div className={`center centerTitle `}>
+                <div className="text-xs font-semibold">
                     <h4 className={`title is-4`}>
                        Up to {this.gain()} Eth
                     </h4>
                 </div>
-                <div className="center rightTitle">
+                <div className="text-xs font-extrabold">
                     <p className="is-size-7">
                         {this.state.adversary}
                     </p>
@@ -167,30 +167,34 @@ class Bet extends React.Component {
             return (<div></div>)
         }
         if (this.state.state === "2") {
-            return (<button className="button is-violet mt-5" onClick={() => this.earn()}>Get Earned Money</button>);
+            return (<div className="mt-16 flex justify-end">
+                <button className="p-2 rounded-full border border-gray-900 text-xl font-bold hover:font-semibold" onClick={() => this.earn()}>Get Earned Money</button>
+                </div>);
         }
         if (this.state.state === "1") {
             if(this.state.isCreator === true) {
-                return (<button className="button is-violet mt-5" onClick={() => this.cancel()}>Cancel</button>);
+                return (<div className="mt-16 flex justify-end">
+                <button className="p-2 rounded-full border border-gray-900 text-xl font-bold hover:font-semibold" onClick={() => this.cancel()}>Cancel</button>
+                </div>);
             }
-            return (<button className="button is-violet mt-5" onClick={() => this.confirm()}>Confirm</button>);
+            return (<div className="mt-16 flex justify-end"><button className="p-2 rounded-full border border-gray-900 text-xl font-bold hover:font-semibold" onClick={() => this.confirm()}>Confirm</button></div>);
         }
     }
 
     styleOnHomeTeam() {
         if (this.state.yourBet) {
-            return 'title is-3';
+            return 'text-xl text-gray-900';
         }
 
-        return 'subtitle is-4';
+        return 'contourVert text-2xl text-gray-900 font-extrabold';
     }
 
     styleOnAwayTeam() {
         if (this.state.yourBet) {
-            return 'subtitle is-4';
+            return 'contourVert text-2xl text-gray-900 font-extrabold';
         }
 
-        return 'title is-3';
+        return 'text-xl text-gray-900';
     }
 
     win() {
@@ -215,10 +219,10 @@ class Bet extends React.Component {
             return (<div></div>);
         }
         return (
-            <section class={`hero ${this.getStyle()}`}>
-                <div class="hero-body">
+            <section className={`shadow-2xl border border-gray-300 flex items-center justify-center p-10 m-10 ${this.getStyle()}`}>
+                <div className="min-w-full">
                     {this.getBetResult()}
-                    <div class="container parentTitle mt-5">
+                    <div className="my-10 flex justify-around">
                         <div className="center leftTitle">
                             <h4 className={`${this.styleOnHomeTeam()}`}>
                                 {this.state.matche.homeTeam.name}

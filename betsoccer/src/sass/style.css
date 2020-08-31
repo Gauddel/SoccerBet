@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@responsive {
+    .bg-image {
+        background-image:  url('./images/BackgroundImage.png');
+      }
+    .contourNoir {
+        -webkit-text-stroke: 0.5px #1a202c;
+    }
+    .contourVert {
+        -webkit-text-stroke: 0.5px #e4d51c;
+
+    }
+}

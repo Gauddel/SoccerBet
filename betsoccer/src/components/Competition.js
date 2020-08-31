@@ -22,24 +22,22 @@ class Competition extends React.Component {
 
     isGreen() {
         if(this.state.isGreen) {
-            return 'is-green';
+            return 'border border-gray-300';
         }
     }
 
     render() {
         return (
-        <div className={`card ${this.isGreen()}`} >
-            <div className="card-image center">
-                <figure className="imageC image is-128x128">
-                        <img className="resize" src={this.state.url} alt={this.state.name}/>
-                </figure>
-            </div>
-            <div className="card-content">
-                <a onClick={() => this.loadCompetition()}>
-                    <h3 className="has-text-weight-semibold is-uppercase">{this.state.name}</h3>
-                </a>
-                
-            </div>
+        <div className={`shadow-md p-3 mb-20 flex items-center justify-center ${this.isGreen()}`} >
+            <a className="cursor-pointer" onClick={() => this.loadCompetition()}>
+                <div class="container">
+                    <div className="card-image center">
+                        <figure className="imageC image is-128x128">
+                                <img className="w-32 " src={this.state.url} alt={this.state.name}/>
+                        </figure>
+                    </div>
+                </div>
+            </a>
         </div>);
     }
 }

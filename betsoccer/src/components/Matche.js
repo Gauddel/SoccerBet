@@ -23,14 +23,16 @@ class Matche extends React.Component {
 
     getHomeTeamStyle() {
         if (this.state.homeTeamId === this.state.wantedTeamId) {
-            return 'is-green';
+            return 'bg-vert text-gray-900';
         }
+        return 'bg-gray-800 text-gray-100'
     }
 
     getAwayTeamStyle() {
         if (this.state.awayTeamId === this.state.wantedTeamId) {
-            return 'is-green';
+            return 'bg-vert text-gray-900';
         }
+        return 'bg-gray-800 text-gray-100'
     }
 
     loadCreateBetComponentCall(homeTeam) {
@@ -39,33 +41,30 @@ class Matche extends React.Component {
 
     render() {
         return (
-        <div className="tile is-ancestor">
-            <div className="tile is-half is-offset-one-quarte">
-                <div className="tile">
-                    <div className={`tile is-parent ${this.getHomeTeamStyle()}`}>
-                        <div class={`tile is-child is-primary center has-text-centered`}>
-                            <h5 class="has-text-weight-bold is-5 mr-1">{this.state.homeTeam}</h5>
-                            <button className="button is-violet ml-1" onClick={() => this.loadCreateBetComponentCall(true)}>WIN</button>
+            <div className="shadow-md border border-gray-300 flex items-center justify-center p-10 m-10">
+                    <div className={`shadow-2xl rounded-lg w-2/5 m-5 ${this.getHomeTeamStyle()}`}>
+                        <div class='flex items-center justify-center'>
+                            <h5 class="w-3/5 text-3xl font-extrabold p-5">{this.state.homeTeam}</h5>
+                            <div className="cursor-pointer w-2/5 flex items-center justify-center">
+                                <button className=" p-2 rounded-full border border-gray-100  text-xl font-bold hover:font-semibold" onClick={() => this.loadCreateBetComponentCall(true)}>WIN</button>
+                            </div>
+                            
                         </div>
                     </div>
-                </div>
-                <div className="tile">
-                    <div className="tile is-parent">
+                    <div className="w-1/5 text-xs">
                         <div class="tile is-child notification">
                         <h6 class="subtitle is-6 is-text-violet">{this.state.date.toString()}</h6>
                         </div>
                     </div>
-                </div>
-                <div className="tile">
-                    <div className={`tile is-parent ${this.getAwayTeamStyle()}`}>
-                        <div class={`tile is-child is-primary center has-text-centered`}>
-                            <button className="button is-violet mr-1" onClick={() => this.loadCreateBetComponentCall(false)}>WIN</button>
-                            <h5 className="has-text-weight-bold is-5 ml-1">{this.state.awayTeam}</h5>
+                    <div className={`shadow-2xl rounded-lg w-2/5 m-5 ${this.getAwayTeamStyle()}`}>
+                        <div class={`flex items-center justify-center`}>
+                            <div className="cursor-pointer w-2/5 flex items-center justify-center">
+                                <button className="p-2 rounded-full border border-gray-100 text-xl font-bold hover:font-semibold" onClick={() => this.loadCreateBetComponentCall(false)}>WIN</button>
+                            </div>
+                            <h5 className="w-3/5 text-3xl font-extrabold p-5">{this.state.awayTeam}</h5>
                         </div>
                     </div>
-                </div>
             </div>
-        </div>
         );
     }
 }

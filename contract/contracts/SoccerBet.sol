@@ -33,7 +33,7 @@ contract SoccerBet is ChainlinkClient, Ownable {
     LinkToken linkToken;
     uint256 benefits;
 
-    event RequestMatchResultFulfilled(bytes32 indexed requestId, bool indexed _homeTeamWon);
+    // event RequestMatchResultFulfilled(bytes32 indexed requestId, bool indexed _homeTeamWon);
     event BetCreated(string matcheId, address sender, address against, uint256 unlockBetTime, uint256 amount);
     event BetCanceled(string matcheId, address sender, address against, uint256 unlockBetTime, uint256 amount);
     event BetConfirmed(string matcheId, address sender, address against, uint256 unlockBetTime, uint256 amount);
